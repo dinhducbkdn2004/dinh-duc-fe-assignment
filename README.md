@@ -13,6 +13,8 @@
     - **Figma**: [link](https://www.figma.com/design/YbtyD7VZFRL0OgGg1jTz5z/RFX---Assignment?node-id=0-1&p=f&t=Vcy92KesZyjqZtV8-0)
 - **Submission Format**: 
   - Candidate must fork this repository to a public repo under their name for submission. Notify email `hr@riverflow.solutions` when done.
+    + **Note**: If you are concerned about others copying your assignment, you may choose to push your code only on the deadline day. Please note, however, that we check the commit log history to verify contributions.
+
   - Submit a Git repository link
   - Include a README with setup instructions
   - Explain key architectural decisions and trade-offs
