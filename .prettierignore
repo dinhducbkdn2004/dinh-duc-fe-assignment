@@ -1,0 +1,39 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+dist-ssr
+build
+coverage
+
+# Git hooks
+.husky
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Minified files
+*.min.js
+*.min.css
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Cache
+.cache
+.parcel-cache
+
+# IDE
+.vscode
+.idea
+
+# Generated files
+CHANGELOG.md

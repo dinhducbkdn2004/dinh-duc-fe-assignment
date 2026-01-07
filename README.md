@@ -1,82 +1,254 @@
-# 📑 Front-End Development Test
+# Frontend Assignment
 
-- Copyright (c) RFX Joint Stock Company. 2026. All rights reserved.
-- We only use the submissions for candidates evaluation.
+## Setup Instructions
 
-## **A. Instructions**
-- **Position**: Front-End Developer
-- **Expected Time**: 6–10 hours
-- **Stack**: React, TypeScript, TailwindCSS, Vite
-- **Backend**: Not required (mock data only)
-- **Design**:
-    - **Sheets**: [link](https://docs.google.com/spreadsheets/d/18GvhNs3mLVjVoEUWlVMlNpNI3aGqqiozZvoLpwgew-k/edit?usp=sharing)
-    - **Figma**: [link](https://www.figma.com/design/YbtyD7VZFRL0OgGg1jTz5z/RFX---Assignment?node-id=0-1&p=f&t=Vcy92KesZyjqZtV8-0)
-- **Submission Format**: 
-  - Candidate must fork this repository to a public repo under their name for submission. Notify email `hr@riverflow.solutions` when done.
-    + **Note**: If you are concerned about others copying your assignment, you may choose to push your code only on the deadline day. Please note, however, that we check the commit log history to verify contributions.
+### Prerequisites
 
-  - Submit a Git repository link
-  - Include a README with setup instructions
-  - Explain key architectural decisions and trade-offs
-  - Ensure the project can be run with standard npm commands
+- Node.js 18+ and npm 9+
+- Git
+
+### Installation
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`
+
+### Available Commands
+
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run preview  # Preview production build
+npm run lint     # Check code quality with ESLint
+npm run format   # Format code with Prettier
+```
+
+## Project Overview
+
+This project implements three core features for a React-based application following strict requirements for TypeScript, Tailwind CSS, and clean architecture.
+
+### Implemented Features
+
+1. **Messages** - Simple messaging interface with compose box and real-time updates
+2. **Discussion** - Comment threads with one level of nested replies
+3. **Attachments** - File management with upload, validation, and download capabilities
+
+## Tech Stack
+
+- **React 19** - UI framework with functional components only
+- **TypeScript** - Strict mode enabled, no `any` types
+- **Vite 7** - Build tool with native ESM and instant HMR
+- **Tailwind CSS v4** - Utility-first CSS framework with custom theme
+- **ESLint + Prettier** - Code quality and formatting
+- **Husky + lint-staged** - Pre-commit hooks for quality assurance
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── ui/             # Reusable UI components (buttons, inputs)
+│   └── layout/         # Layout components (header, footer)
+├── features/           # Feature modules (messages, discussions, attachments)
+├── hooks/              # Custom React hooks
+├── contexts/           # React context providers
+├── pages/              # Page components
+├── mocks/              # Mock data for local development
+├── types/              # TypeScript type definitions
+├── utils/              # Utility functions and helpers
+└── styles/             # Global styles and theme configuration
+```
+
+## Architectural Decisions
+
+### 1. Feature-Based Organization
+
+Code is organized by feature rather than by file type. Each feature module contains its own components, types, and logic, making the codebase more maintainable and scalable.
+
+### 2. Path Aliases
+
+Configured TypeScript and Vite path aliases for cleaner imports:
+
+- `@/` - src root
+- `@components/` - shared components
+- `@features/` - feature modules
+- `@hooks/` - custom hooks
+- `@utils/` - utility functions
+- `@types/` - type definitions
+- `@mocks/` - mock data
+- `@contexts/` - context providers
+- `@pages/` - page components
+- `@styles/` - styles and theme
+
+### 3. Mock Data Strategy
+
+All data is mocked locally to ensure deterministic behavior without backend dependencies. Services return Promises to simulate async API calls and demonstrate proper loading state handling.
+
+### 4. Type Safety
+
+Strict TypeScript configuration enforces:
+
+- No implicit `any` types
+- Strict null checks
+- Unused variable detection
+- Exhaustive switch case checking
+- No unused locals/parameters
+
+### 5. Styling with Tailwind CSS v4
+
+Uses the latest Tailwind CSS v4 with:
+
+- CSS-first configuration via `@import "tailwindcss"`
+- Custom theme with CSS variables
+- Utility-only approach (no custom CSS files)
+- Conditional styling with `clsx` utility
+
+### 6. Code Quality Automation
+
+Pre-commit hooks automatically:
+
+- Run ESLint with auto-fix
+- Format code with Prettier
+- Only process staged files (fast performance)
+
+## Trade-offs
+
+### Simplicity Over Complexity
+
+Chose React's built-in state management (useState, useContext) instead of Redux/Zustand. For this application's scope, external state libraries would add unnecessary complexity.
+
+### Local Mock Data
+
+Simple Promise-based services provide sufficient flexibility without additional dependencies like MSW or json-server. This keeps the setup lightweight and the data flow transparent.
+
+### Tailwind-Only Styling
+
+No custom CSS files reduces maintenance burden and enforces design consistency. All styling is done through utility classes, making it easier to understand component appearance at a glance.
+
+### Strict TypeScript
+
+Slightly increases initial development time but eliminates entire classes of runtime errors and significantly improves code maintainability and refactoring confidence.
+
+## Implementation Details
+
+### State Management
+
+Uses React's built-in hooks (`useState`, `useEffect`, `useContext`) without external state management libraries. Feature-specific state is colocated with components.
+
+### Styling Strategy
+
+All styling uses Tailwind CSS utility classes. Components compose utilities with the `cn()` helper function for conditional classes. Custom theme variables are defined in `src/styles/theme.css`.
+
+### Error Handling
+
+All features implement proper loading, empty, and error states as required by the specification.
+
+### Responsiveness
+
+Desktop-first responsive design with Tailwind breakpoints for mobile and tablet views.
+
+## Global Requirements Compliance
+
+- React functional components only
+- TypeScript with no `any` types (enforced by ESLint)
+- TailwindCSS for all styling (no inline styles)
+- Clean, feature-based folder structure
+- Loading, empty, and error states handled
+- Responsive design (desktop-first)
+
+## Development Notes
+
+- ESLint enforces React Hooks rules to prevent common bugs
+- Husky ensures code quality before every commit
+- Vite provides instant feedback with sub-second HMR
+- All components are fully typed with TypeScript interfaces
 
 ---
 
-## **B. Global Requirements**
+**Submission for Front-End Developer Position**
+Expected Time: 6-10 hours
+Stack: React, TypeScript, TailwindCSS, Vite
+├── hooks/ # Custom React hooks
+├── services/ # API/data service functions
+├── mocks/ # Mock data for local development
+├── types/ # TypeScript type definitions
+└── utils/ # Utility functions and helpers
 
-- Use React functional components only
-- TypeScript is required (avoid using `any`)
-- Use TailwindCSS for styling (no inline styles)
-- Organize code with a clean and logical folder structure
-- Handle loading, empty, and error states
-- Ensure reasonable responsiveness (desktop-first is acceptable)
+```
 
----
+## Architectural Decisions
 
-## **C. Exercises**
-### **C1. Exercise 1: Message**
+### Feature-Based Organization
 
-Build a simple messaging interface with a list of messages and a compose box.
+Code is organized by feature rather than by file type. Each feature module contains its own components, types, and logic, making it easier to maintain and scale.
 
-#### **Requirements:**
-- Display a list of messages sorted by newest first
-- Each message shows author, content, and timestamp
-- Provide a textarea to compose a new message
-- Disable send button when input is empty
-- Append new message to the list after sending
-- Auto-scroll to the newest message
+### Path Aliases
 
----
+Configured TypeScript and Vite path aliases for cleaner imports:
 
-### **C2. Exercise 2: Discussion**
+- `@/` - src root
+- `@components/` - components folder
+- `@features/` - features folder
+- `@utils/` - utility functions
+- `@types/` - type definitions
+- `@services/` - service functions
+- `@mocks/` - mock data
 
-Implement a discussion thread with comments and one level of replies. Replies should visually resemble a chat interface.
+### Mock Data Strategy
 
-#### **Requirements:**
-- List comments with author, content, and timestamp
-- Allow one level of replies per comment
-- Replies should be visually indented and chat-style
-- Provide an inline reply input per comment
-- Ensure replies are added to the correct comment
+All data is mocked locally to ensure deterministic behavior without backend dependencies. Mock data is accessed through service functions that return Promises, simulating async API calls to demonstrate proper loading state handling.
 
----
+### Type Safety
 
-### **C3. Exercise 3: Attachments**
+Strict TypeScript configuration enforces:
 
-Create an attachments section that allows displaying and uploading files.
+- No implicit `any` types
+- Strict null checks
+- Unused variable detection
+- Exhaustive switch case checking
 
-#### **Requirements:**
-- Display a list of attached files with name, type, and formatted size
-- Provide a mock download button
-- Include an upload box (file input or drag-and-drop)
-- Support multiple file uploads
-- Validate file size and file type on the client
-- Show appropriate empty and error states
+### Code Quality
 
----
+Pre-commit hooks automatically run ESLint and Prettier on staged files, ensuring consistent code style and catching errors before they enter the codebase.
 
-## **D. Additional Notes**
+## Implementation Approach
 
-- This test evaluates your front-end development skills using React, TypeScript, TailwindCSS, and Vite
-- Focus on demonstrating your technical skills, code organization, and attention to detail
-- Ensure all submission requirements are met before the deadline
+### State Management
+
+Uses React's built-in hooks (`useState`, `useEffect`) without external state management libraries. Feature-specific state is colocated with components.
+
+### Styling Strategy
+
+Tailwind CSS utility classes only - no custom CSS files or inline styles. Components compose utilities with the `cn()` helper function for conditional classes.
+
+### Error Handling
+
+All features implement proper loading, empty, and error states as required.
+
+### Responsiveness
+
+Desktop-first approach with responsive breakpoints for smaller screens.
+
+## Trade-offs
+
+**Chose simplicity over complexity**: Avoided Redux/Zustand as the app doesn't require global state management. React's context and hooks are sufficient.
+
+**Local mock data over API mocking libraries**: Simple Promise-based services provide enough flexibility without additional dependencies.
+
+**Tailwind only**: No custom CSS reduces maintenance burden and enforces design consistency through utility classes.
+
+**Strict TypeScript**: Slightly longer development time but eliminates entire classes of runtime errors and improves maintainability.
+
+## Development Notes
+
+- All components are functional with TypeScript
+- ESLint enforces React Hooks rules to prevent common bugs
+- Husky ensures code quality before commits
+- Vite provides instant feedback with sub-second HMR
+```
