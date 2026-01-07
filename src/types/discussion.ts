@@ -3,7 +3,7 @@ export interface Reply {
   author: string;
   authorAvatar?: string;
   content: string;
-  timestamp: string; // ISO 8601 format
+  timestamp: string;
 }
 
 export interface Comment {
@@ -11,7 +11,7 @@ export interface Comment {
   author: string;
   authorAvatar?: string;
   content: string;
-  timestamp: string; // ISO 8601 format
+  timestamp: string;
   replies: Reply[];
 }
 

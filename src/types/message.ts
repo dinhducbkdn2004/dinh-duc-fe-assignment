@@ -6,7 +6,7 @@ export interface Message {
   recipients: string[];
   subject: string;
   content: string;
-  date: string; // ISO 8601 format
+  date: string;
   category: MessageCategory;
   tags: string[];
   isRead: boolean;

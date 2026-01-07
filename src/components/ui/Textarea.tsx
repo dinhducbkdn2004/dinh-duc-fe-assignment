@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useRef } from 'react';
 import type { TextareaHTMLAttributes } from 'react';
-import { cn } from '@//utils/cn';
+import { cn } from '@/utils/cn';
 
 export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;

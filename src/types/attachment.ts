@@ -4,9 +4,9 @@ export interface AttachmentFile {
   id: string;
   name: string;
   type: FileType;
-  size: number; // in bytes
-  date: string; // ISO 8601 format
-  path?: string; // optional grouping path
+  size: number;
+  date: string;
+  path?: string;
 }
 
 export interface FileUploadError {
@@ -15,6 +15,5 @@ export interface FileUploadError {
   message: string;
 }
 
-// Validation constants
-export const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB in bytes
+export const MAX_FILE_SIZE = 5 * 1024 * 1024;
 export const ALLOWED_FILE_TYPES: FileType[] = ['PDF', 'DOCX', 'PNG', 'JPG', 'JPEG'];
