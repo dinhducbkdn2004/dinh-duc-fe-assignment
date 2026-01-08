@@ -1,5 +1,5 @@
 import { Button, Select } from '@/components/ui';
-import { FORM_DEFAULTS, MESSAGE_DIMENSIONS } from '@/constants';
+import { FORM_DEFAULTS } from '@/constants';
 
 export interface PaginationProps {
   currentPage: number;
@@ -40,7 +40,7 @@ export const Pagination = ({
 
   return (
     <div
-      className={`h-[${MESSAGE_DIMENSIONS.PAGINATION_HEIGHT}px] border-t bg-background px-2 md:px-3 flex items-center justify-between ${className}`}
+      className={`h-14 border-t bg-background px-2 md:px-3 flex items-center justify-between ${className}`}
     >
       <span className='text-xs md:text-sm font-medium'>Total {totalItems}</span>
       <div className='flex items-center gap-2 md:gap-5'>

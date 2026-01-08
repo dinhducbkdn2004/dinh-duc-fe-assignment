@@ -10,7 +10,7 @@ const Header = () => {
   const { currentUser } = useUser();
 
   return (
-    <header className='h-16 bg-primary font-semibold text-white shadow-sm'>
+    <header className='h-14 bg-primary font-semibold text-white shadow-sm'>
       <div className='flex h-full items-center max-w-full'>
         <div className='shrink-0 w-[180px] lg:w-[240px] flex items-center px-2'>
           <Link to='/' className='flex flex-start h-full'>
