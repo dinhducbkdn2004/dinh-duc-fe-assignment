@@ -21,3 +21,15 @@ export type { EmptyStateProps } from './EmptyState';
 
 export { default as Dropdown, DropdownItem, DropdownSeparator } from './Dropdown';
 export type { DropdownProps, DropdownItemProps } from './Dropdown';
+
+export { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from './Table';
+
+export { Modal, ModalHeader, ModalBody, ModalFooter } from './Modal';
+
+export { Checkbox } from './Checkbox';
+
+export { Select } from './Select';
+export type { SelectProps } from './Select';
+
+export { Pagination } from './Pagination';
+export type { PaginationProps } from './Pagination';

@@ -13,7 +13,9 @@ const MainLayout = ({ children }: MainLayoutProps) => {
     <div className='h-screen flex flex-col bg-background text-foreground'>
       <Header />
       <div className='flex-1 flex overflow-hidden'>
-        <Sidebar activeSection={activeSection} onSectionChange={setActiveSection} />
+        <div className='hidden lg:block'>
+          <Sidebar activeSection={activeSection} onSectionChange={setActiveSection} />
+        </div>
         <main className='flex-1 overflow-auto bg-muted/30'>{children}</main>
       </div>
     </div>

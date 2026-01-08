@@ -1,6 +1,4 @@
 import { Tag } from 'lucide-react';
-import { cn } from '@/utils';
-import { Badge } from '../ui';
 import { SIDEBAR_MENU_ITEMS, SIDEBAR_CATEGORIES, SIDEBAR_TAGS } from '@/constants';
 
 interface SidebarProps {
@@ -8,77 +6,76 @@ interface SidebarProps {
   onSectionChange?: (section: string) => void;
 }
 
-const Sidebar = ({ activeSection = 'inbox', onSectionChange }: SidebarProps) => {
+const Sidebar = ({ onSectionChange }: SidebarProps) => {
   return (
-    <aside className='w-64 border-r bg-card/50 backdrop-blur-sm h-full hidden lg:flex lg:flex-col'>
-      <div className='p-4'>
-        <h3 className='text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2'>
-          Messages
-        </h3>
-        <nav className='space-y-1'>
+    <aside className='w-[240px] border-r border-border bg-card h-full flex flex-col'>
+      <div className='flex flex-col'>
+        <div className='h-[52px] px-3 flex items-center border-b border-border'>
+          <h3 className='text-sm font-semibold text-muted-foreground uppercase leading-[28px]'>
+            MESSAGES
+          </h3>
+        </div>
+        <div className='p-3 space-y-2'>
           {SIDEBAR_MENU_ITEMS.map((item) => {
             const Icon = item.icon;
-            const isActive = activeSection === item.id;
             return (
               <button
                 key={item.id}
                 onClick={() => onSectionChange?.(item.id)}
-                className={cn(
-                  'w-full flex items-center gap-3 px-3 py-2 text-sm rounded-lg transition-colors',
-                  isActive
-                    ? 'bg-primary text-primary-foreground'
-                    : 'hover:bg-accent text-foreground',
-                )}
+                className='w-full flex items-center justify-between h-6 transition-colors'
               >
-                <Icon size={16} />
-                <span className='flex-1 text-left'>{item.label}</span>
-                {item.count !== undefined && (
-                  <Badge
-                    variant={isActive ? 'secondary' : 'secondary'}
-                    size='sm'
-                    className={cn('h-5 min-w-5', isActive && 'bg-primary-foreground/20')}
-                  >
-                    {item.count}
-                  </Badge>
-                )}
+                <div className='flex items-center gap-3'>
+                  <Icon size={20} strokeWidth={1.67} className='text-foreground' />
+                  <span className='text-base font-medium text-foreground'>{item.label}</span>
+                </div>
               </button>
             );
           })}
-        </nav>
+        </div>
       </div>
 
-      <div className='px-4 py-3 border-t border-border'>
-        <h3 className='text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2'>
-          Categories
-        </h3>
-        <nav className='space-y-1'>
+      <div className='flex flex-col'>
+        <div className='h-[52px] px-3 flex items-center border-b border-border'>
+          <h3 className='text-sm font-semibold text-muted-foreground uppercase leading-[28px]'>
+            CATEGORIES
+          </h3>
+        </div>
+        <div className='p-3 space-y-2'>
           {SIDEBAR_CATEGORIES.map((category) => (
             <button
               key={category.id}
-              className='w-full flex items-center gap-3 px-3 py-2 text-sm rounded-lg hover:bg-accent text-foreground transition-colors'
+              className='w-full flex items-center justify-between h-6 transition-colors'
             >
-              <div className='h-2 w-2 rounded-full bg-muted-foreground' />
-              <span className='flex-1 text-left'>{category.label}</span>
+              <div className='flex items-center gap-3'>
+                <div className='w-5 h-5 flex items-center justify-center'>
+                  <div className='w-2 h-2 rounded-full bg-foreground' />
+                </div>
+                <span className='text-base font-medium text-foreground'>{category.label}</span>
+              </div>
             </button>
           ))}
-        </nav>
+        </div>
       </div>
 
-      <div className='px-4 py-3 border-t border-border'>
-        <h3 className='text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2'>
-          Tags
-        </h3>
-        <nav className='space-y-1'>
+      <div className='flex flex-col'>
+        <div className='h-[52px] px-3 flex items-center border-b border-border'>
+          <h3 className='text-sm font-semibold text-muted-foreground uppercase leading-[28px]'>
+            TAGS
+          </h3>
+        </div>
+        <div className='p-3 space-y-2'>
           {SIDEBAR_TAGS.map((tag) => (
             <button
               key={tag.id}
-              className='w-full flex items-center gap-3 px-3 py-2 text-sm rounded-lg hover:bg-accent text-foreground transition-colors'
+              className='w-full flex items-center justify-between h-6 transition-colors'
             >
-              <Tag size={14} />
-              <span className='flex-1 text-left text-xs'>{tag.label}</span>
+              <div className='flex items-center gap-3'>
+                <Tag size={20} strokeWidth={1.67} className='text-foreground' />
+                <span className='text-base font-medium text-foreground'>{tag.label}</span>
+              </div>
             </button>
           ))}
-        </nav>
+        </div>
       </div>
     </aside>
   );

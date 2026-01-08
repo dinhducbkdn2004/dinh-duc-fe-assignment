@@ -32,10 +32,10 @@ We look forward to speaking with you.
 
 Best regards,
 [Your Name]`,
-    date: '2026-02-15T10:00:00Z',
+    date: '2025-02-15T10:00:00Z',
     category: 'user-management',
     tags: ['user-management'],
-    isRead: false,
+    isRead: true,
   },
   {
     id: 'msg-002',
@@ -68,7 +68,7 @@ We look forward to speaking with you.
 
 Best regards,
 [Your Name]`,
-    date: '2026-03-10T14:30:00Z',
+    date: '2025-03-10T14:30:00Z',
     category: 'user-management',
     tags: ['user-management'],
     isRead: true,
@@ -97,7 +97,7 @@ Please confirm your attendance.
 
 Best regards,
 Rachel Green`,
-    date: '2026-04-05T09:00:00Z',
+    date: '2025-04-05T09:00:00Z',
     category: 'meeting-reminder',
     tags: ['meeting-reminder'],
     isRead: true,
@@ -121,10 +121,10 @@ Limited seats available. Register now!
 
 Regards,
 Laura White`,
-    date: '2026-05-20T11:15:00Z',
+    date: '2025-05-20T11:15:00Z',
     category: 'general',
     tags: [],
-    isRead: false,
+    isRead: true,
   },
   {
     id: 'msg-005',
@@ -136,7 +136,7 @@ Laura White`,
 Your tickets for the Annual Music Festival are ready!
 
 Event Details:
-• Date: June 15, 2026
+• Date: June 15, 2025
 • Time: 6:00 PM onwards
 • Venue: Central Park Arena
 • Gates open: 5:00 PM
@@ -145,7 +145,7 @@ Please bring this confirmation email and a valid ID.
 
 See you there!
 Daniel Taylor`,
-    date: '2026-06-15T16:00:00Z',
+    date: '2025-06-15T16:00:00Z',
     category: 'general',
     tags: [],
     isRead: true,
@@ -169,10 +169,10 @@ First class starts next week. Please arrive 15 minutes early.
 
 Best,
 Anna`,
-    date: '2026-07-01T19:00:00Z',
+    date: '2025-07-01T19:00:00Z',
     category: 'user-management',
     tags: ['user-management'],
-    isRead: false,
+    isRead: true,
   },
   {
     id: 'msg-007',
@@ -184,7 +184,7 @@ Anna`,
 We're honored to invite you as a judge for our Annual Science Fair.
 
 Event Information:
-• Date: August 18, 2026
+• Date: August 18, 2025
 • Time: 9:00 AM - 4:00 PM
 • Location: University Hall
 • Lunch provided
@@ -193,7 +193,7 @@ Please confirm by August 10th.
 
 Sincerely,
 Dr. Robert Lee`,
-    date: '2026-08-18T09:00:00Z',
+    date: '2025-08-18T09:00:00Z',
     category: 'meeting-reminder',
     tags: ['meeting-reminder'],
     isRead: true,
@@ -208,7 +208,7 @@ Dr. Robert Lee`,
 Your reservation for "Romeo and Juliet" is confirmed!
 
 Show Details:
-• Date: September 10, 2026
+• Date: September 10, 2025
 • Time: 7:30 PM
 • Seats: Row F, Seats 12-13
 • Theater: Grand Performance Hall
@@ -217,10 +217,10 @@ Doors open at 6:30 PM. Enjoy the show!
 
 John Kim
 Box Office Manager`,
-    date: '2026-09-10T19:30:00Z',
+    date: '2025-09-10T19:30:00Z',
     category: 'general',
     tags: [],
-    isRead: false,
+    isRead: true,
   },
   {
     id: 'msg-009',
@@ -232,7 +232,7 @@ Box Office Manager`,
 You're cordially invited to our Annual Charity Gala.
 
 Event Details:
-• Date: October 22, 2026
+• Date: October 22, 2025
 • Time: 6:00 PM - 11:00 PM
 • Venue: Grand Hotel Ballroom
 • Dress Code: Black Tie
@@ -243,7 +243,7 @@ All proceeds go to local charities.
 
 Warm regards,
 Lisa Hall`,
-    date: '2026-10-22T18:00:00Z',
+    date: '2025-10-22T18:00:00Z',
     category: 'meeting-reminder',
     tags: ['meeting-reminder'],
     isRead: true,
@@ -255,23 +255,23 @@ Lisa Hall`,
     subject: 'Tech Conference Registration',
     content: `Hi Mia,
 
-Welcome to TechConf 2026!
+Welcome to TechConf 2025!
 
 Conference Schedule:
 • Day 1: Keynote speeches
 • Day 2: Workshop sessions
 • Day 3: Networking events
 
-Dates: November 30 - December 2, 2026
+Dates: November 30 - December 2, 2025
 Location: Convention Center
 
 Your badge will be available at registration.
 
 See you there!
 Kevin Scott`,
-    date: '2026-11-30T08:00:00Z',
+    date: '2025-11-30T08:00:00Z',
     category: 'user-management',
     tags: ['user-management'],
-    isRead: false,
+    isRead: true,
   },
 ];

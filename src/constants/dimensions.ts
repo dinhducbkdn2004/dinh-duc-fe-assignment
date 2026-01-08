@@ -1,0 +1,36 @@
+export const LAYOUT_DIMENSIONS = {
+  HEADER_HEIGHT: 64,
+  SIDEBAR_WIDTH: 240,
+  MESSAGE_LIST_MIN_WIDTH: 700,
+  MESSAGE_DETAIL_MIN_WIDTH: 400,
+  MESSAGE_DETAIL_MAX_WIDTH: 600,
+} as const;
+
+export const MESSAGE_DIMENSIONS = {
+  HEADER_HEIGHT: 52,
+  FOOTER_HEIGHT: 56,
+  ROW_HEIGHT: 40,
+  PAGINATION_HEIGHT: 56,
+} as const;
+
+export const MODAL_DIMENSIONS = {
+  COMPOSE: {
+    WIDTH: 782,
+    HEIGHT: 433,
+    HEADER_HEIGHT: 44,
+    FOOTER_HEIGHT: 72,
+  },
+} as const;
+
+export const FORM_DEFAULTS = {
+  TEXTAREA_ROWS: 6,
+  ITEMS_PER_PAGE_OPTIONS: [5, 10, 20, 50] as const,
+  DEFAULT_ITEMS_PER_PAGE: 10,
+} as const;
+
+export const BREAKPOINTS = {
+  sm: 640,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
+} as const;
