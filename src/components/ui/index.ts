@@ -33,3 +33,6 @@ export type { SelectProps } from './Select';
 
 export { Pagination } from './Pagination';
 export type { PaginationProps } from './Pagination';
+
+export { RichTextEditor } from './RichTextEditor';
+export type { RichTextEditorProps, RichTextEditorRef } from './RichTextEditor';

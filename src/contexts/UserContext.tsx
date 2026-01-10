@@ -11,7 +11,7 @@ const defaultUser: User = {
   id: 'user-1',
   name: 'Dinh Duc',
   email: 'dinhduc@gmail.com',
-  avatar: 'https://avatar.iran.liara.run/username?username=Dinh+Duc',
+  avatar: 'https://img.icons8.com/?size=200&id=tZuAOUGm9AuS&format=png&color=000000',
 };
 
 interface UserProviderProps {
