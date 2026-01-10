@@ -66,10 +66,12 @@ export const Comment = ({
               )}
             </div>
           </div>
-          <div
-            className='text-sm text-foreground discussion-content'
-            dangerouslySetInnerHTML={{ __html: comment.content }}
-          />
+          <div className='ql-snow'>
+            <div
+              className='text-sm text-foreground discussion-content ql-editor !p-0'
+              dangerouslySetInnerHTML={{ __html: comment.content }}
+            />
+          </div>
         </div>
         <Button
           variant='ghost'

@@ -68,7 +68,7 @@ export const DiscussionInput = ({
               onChange={setContent}
               placeholder={placeholder}
               disabled={isSubmitting}
-              minHeight='100px'
+              minHeight='120px'
               className='rich-text-with-scroll'
             />
           </div>

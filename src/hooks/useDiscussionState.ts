@@ -1,5 +1,6 @@
 import { useState, useCallback, useMemo } from 'react';
 import { useUser } from '@/contexts';
+import { sortByDate } from '@/utils';
 import type { Comment, Reply } from '@/types/discussion';
 
 interface EditingReply {
@@ -45,9 +46,7 @@ export const useDiscussionState = (initialComments: Comment[]): UseDiscussionSta
   const [lastCreatedCommentId, setLastCreatedCommentId] = useState<string | null>(null);
 
   const sortedComments = useMemo(() => {
-    return [...comments].sort((a, b) => {
-      return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
-    });
+    return sortByDate(comments, 'timestamp');
   }, [comments]);
 
   const addComment = useCallback(

@@ -1,5 +1,6 @@
 import { useState, useCallback, useMemo } from 'react';
 import type { Message } from '@/types';
+import { sortByDate } from '@/utils';
 
 interface UseMessagesReturn {
   messages: Message[];
@@ -15,10 +16,7 @@ export const useMessages = (initialMessages: Message[]): UseMessagesReturn => {
     setMessages((prev) => [message, ...prev]);
   }, []);
 
-  const sortedMessages = useMemo(
-    () => [...messages].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
-    [messages],
-  );
+  const sortedMessages = useMemo(() => sortByDate(messages, 'date'), [messages]);
 
   return {
     messages,

@@ -57,10 +57,12 @@ export const Reply = ({ reply, currentUserId, onEdit, onDelete }: ReplyProps) =>
                 )}
               </div>
             </div>
-            <div
-              className='text-sm text-foreground discussion-content'
-              dangerouslySetInnerHTML={{ __html: reply.content }}
-            />
+            <div className='ql-snow'>
+              <div
+                className='text-sm text-foreground discussion-content ql-editor !p-0'
+                dangerouslySetInnerHTML={{ __html: reply.content }}
+              />
+            </div>
           </div>
         </div>
       </div>

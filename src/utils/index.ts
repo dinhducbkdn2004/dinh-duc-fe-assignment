@@ -6,3 +6,4 @@ export {
   formatAttachmentDate,
 } from './formatDate';
 export { formatFileSize, isFileSizeValid } from './formatFileSize';
+export { sortByDate } from './sort';
