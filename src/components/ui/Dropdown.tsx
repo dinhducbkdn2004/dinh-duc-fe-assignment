@@ -44,7 +44,7 @@ const Dropdown = ({ trigger, children, align = 'start', className, ...props }: D
       {isOpen && (
         <div
           className={cn(
-            'absolute z-50 mt-2 min-w-[8rem] overflow-hidden rounded-lg border border-border bg-popover p-1 text-popover-foreground shadow-lg',
+            'absolute z-50 mt-2 min-w-[9rem] overflow-hidden rounded-lg border border-border bg-popover p-1 text-popover-foreground shadow-lg',
             align === 'end' ? 'right-0' : 'left-0',
           )}
           role='menu'
@@ -59,6 +59,7 @@ const Dropdown = ({ trigger, children, align = 'start', className, ...props }: D
 export interface DropdownItemProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   destructive?: boolean;
+  disabled?: boolean;
 }
 
 export const DropdownItem = ({

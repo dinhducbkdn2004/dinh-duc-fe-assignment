@@ -1,4 +1,4 @@
-export type FileType = 'PDF' | 'DOCX' | 'PNG' | 'JPG' | 'JPEG' | 'TXT';
+export type FileType = 'PDF' | 'DOC' | 'DOCX' | 'XLS' | 'XLSX' | 'PNG' | 'JPG' | 'JPEG' | 'TXT';
 
 export interface AttachmentFile {
   id: string;
@@ -16,4 +16,13 @@ export interface FileUploadError {
 }
 
 export const MAX_FILE_SIZE = 5 * 1024 * 1024;
-export const ALLOWED_FILE_TYPES: FileType[] = ['PDF', 'DOCX', 'PNG', 'JPG', 'JPEG'];
+export const ALLOWED_FILE_TYPES: FileType[] = [
+  'PDF',
+  'DOC',
+  'DOCX',
+  'XLS',
+  'XLSX',
+  'PNG',
+  'JPG',
+  'JPEG',
+];

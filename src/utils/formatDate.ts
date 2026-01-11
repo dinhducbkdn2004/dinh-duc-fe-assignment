@@ -23,8 +23,3 @@ export function formatRelativeTime(dateString: string): string {
 
   return formatDistanceToNow(date, { addSuffix: true });
 }
-
-export function formatAttachmentDate(dateString: string): string {
-  const date = parseISO(dateString);
-  return format(date, 'yyyy-MM-dd');
-}

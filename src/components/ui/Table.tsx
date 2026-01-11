@@ -27,11 +27,6 @@ interface TableHeadProps {
   className?: string;
 }
 
-interface TableCellProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
 export const Table = ({ children, className }: TableProps) => {
   return (
     <div className={cn('w-full overflow-auto', className)}>
@@ -52,8 +47,8 @@ export const TableRow = ({ children, className, onClick }: TableRowProps) => {
   return (
     <tr
       className={cn(
-        'border-b border-border transition-colors',
-        onClick && 'cursor-pointer hover:bg-muted/50',
+        'border-b border-border h-10 transition-colors cursor-pointer hover:bg-muted/50',
+        onClick,
         className,
       )}
       onClick={onClick}
@@ -64,9 +59,22 @@ export const TableRow = ({ children, className, onClick }: TableRowProps) => {
 };
 
 export const TableHead = ({ children, className }: TableHeadProps) => {
-  return <th className={cn('text-left p-3 font-medium text-sm', className)}>{children}</th>;
+  return (
+    <th className={cn('text-left p-3 font-bold text-sm bg-primary text-white', className)}>
+      {children}
+    </th>
+  );
 };
 
-export const TableCell = ({ children, className }: TableCellProps) => {
-  return <td className={cn('p-3 text-sm', className)}>{children}</td>;
+export interface TableCellProps extends React.TdHTMLAttributes<HTMLTableCellElement> {
+  children: React.ReactNode;
+  className?: string;
+}
+
+export const TableCell = ({ children, className, ...props }: TableCellProps) => {
+  return (
+    <td className={cn('p-3 text-sm', className)} {...props}>
+      {children}
+    </td>
+  );
 };
