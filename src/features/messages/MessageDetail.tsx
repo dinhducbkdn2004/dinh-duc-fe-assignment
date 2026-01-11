@@ -20,8 +20,8 @@ const MessageDetail = ({ message, onBack }: MessageDetailProps) => {
           )}
           <h2 className='text-base font-bold'>{message.subject}</h2>
         </div>
-        <Button variant='ghost' size='md'>
-          Reply
+        <Button variant='ghost' size='sm'>
+          <span className='text-sm'>Reply</span>
           <ChevronDown size={16} />
         </Button>
       </div>

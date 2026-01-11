@@ -20,9 +20,9 @@ interface MessageListProps {
 
 const MessageList = ({ messages, selectedMessageId, onSelectMessage }: MessageListProps) => {
   return (
-    <div className='h-full overflow-x-auto'>
-      <Table className='h-full min-w-[600px]'>
-        <TableHeader className='bg-primary text-white'>
+    <div className='h-full'>
+      <Table className='h-full'>
+        <TableHeader>
           <TableRow>
             <TableHead>
               <Checkbox className='flex justify-center' />

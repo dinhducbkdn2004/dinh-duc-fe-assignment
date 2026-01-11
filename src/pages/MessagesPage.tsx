@@ -1,32 +1,26 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { mockMessages } from '@/mocks';
 import type { Message } from '@/types';
 import { MessageSquare, RefreshCw, ChevronDown } from 'lucide-react';
 import { EmptyState, Button, Pagination } from '@/components/ui';
 import { MessageList, MessageDetail, ComposeMessage } from '@/features/messages';
 import { cn } from '@/utils';
-import { useMessages, usePagination, useMessageSelection } from '@/hooks';
+import { useMessages, useMessageSelection } from '@/hooks';
 
 const MessagesPage = () => {
-  const { messages, sortedMessages, addMessage } = useMessages(mockMessages);
-  const { selectedMessage, handleSelectMessage, clearSelection } = useMessageSelection();
-  const [isComposing, setIsComposing] = useState(false);
-
   const {
+    messages,
+    currentMessages,
+    addMessage,
     currentPage,
     itemsPerPage,
     totalPages,
-    startIndex,
-    endIndex,
     handlePageChange,
     handleItemsPerPageChange,
-    resetPagination,
-  } = usePagination({ totalItems: messages.length });
+  } = useMessages(mockMessages);
 
-  const paginatedMessages = useMemo(
-    () => sortedMessages.slice(startIndex, endIndex),
-    [sortedMessages, startIndex, endIndex],
-  );
+  const { selectedMessage, handleSelectMessage, clearSelection } = useMessageSelection();
+  const [isComposing, setIsComposing] = useState(false);
 
   const handleCompose = () => {
     setIsComposing(true);
@@ -42,7 +36,6 @@ const MessagesPage = () => {
     addMessage(message);
     handleSelectMessage(message);
     setIsComposing(false);
-    resetPagination();
   };
 
   const handleCancelCompose = () => {
@@ -63,14 +56,15 @@ const MessagesPage = () => {
           >
             <div className='flex items-center gap-3'>
               <h1 className='text-[20px] font-bold'>
-                INBOX ({startIndex + 1}-{Math.min(endIndex, messages.length)}/{messages.length})
+                INBOX ({itemsPerPage * (currentPage - 1) + 1}-
+                {Math.min(itemsPerPage * currentPage, messages.length)}/{messages.length})
               </h1>
               <Button variant='ghost' size='sm' className='p-1'>
                 <RefreshCw size={20} />
               </Button>
             </div>
-            <Button onClick={handleCompose} variant='ghost' size='md'>
-              <span className='text-base'>Compose</span>
+            <Button onClick={handleCompose} variant='outline' size='sm' className='bg-background'>
+              <span className='text-sm'>Compose</span>
               <ChevronDown size={16} />
             </Button>
           </div>
@@ -84,7 +78,7 @@ const MessagesPage = () => {
               />
             ) : (
               <MessageList
-                messages={paginatedMessages}
+                messages={currentMessages}
                 selectedMessageId={selectedMessage?.id}
                 onSelectMessage={handleSelectMessage}
               />
