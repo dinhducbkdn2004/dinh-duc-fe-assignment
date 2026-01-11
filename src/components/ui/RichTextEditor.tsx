@@ -124,10 +124,6 @@ export const RichTextEditor = forwardRef<RichTextEditorRef, RichTextEditorProps>
             onChangeRef.current?.(html);
           }
         });
-
-        if (value) {
-          quillRef.current.root.innerHTML = value;
-        }
       }
     }, [placeholder, toolbar]);
 
